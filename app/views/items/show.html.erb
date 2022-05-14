@@ -27,15 +27,15 @@
 <% if @item.locations.count < 1 %>
 <h2>Add a Location:</h2>
 <%= form_with model: [ @item, @item.locations.build ] do |form| %>
-  <p>
-    <%= form.label :warehouse %><br>
-     <li><%= link_to "Edit", edit__path(@item.locations) %></li>
-    <%= form.text_area :body %>
-  </p>
+  
   
   <p>
     <%= form.label :add_location %><br>
     <%= form.text_field :locator %>
+  </p>
+  <p>
+    <%= form.label :street_address %><br>
+    <%= form.text_field :body %>
   </p>
   
   <p>
