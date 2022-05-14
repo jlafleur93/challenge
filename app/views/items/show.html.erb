@@ -1,6 +1,7 @@
 <h1><%= @item.title %></h1>
 
 <p><%= @item.body %></p>
+<p> <%= @item.price %> </p>
 
 <ul>
   <li><%= link_to "Edit", edit_item_path(@item) %></li>
@@ -9,3 +10,36 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+
+<h2>Locations/Warehouses for shipment</h2>
+<% @item.locations.each do |location| %>
+  <p>
+    <strong>Warehouse Location</strong>
+    <%= location.locator %>
+    <%= @item.locations.count %>
+  </p>
+
+  <p>
+    <strong>Street Address Location:</strong>
+    <%= location.body %>
+  </p>
+<% end %>
+<% if @item.locations.count < 1 %>
+<h2>Add a Location:</h2>
+<%= form_with model: [ @item, @item.locations.build ] do |form| %>
+  <p>
+    <%= form.label :warehouse %><br>
+     <li><%= link_to "Edit", edit__path(@item.locations) %></li>
+    <%= form.text_area :body %>
+  </p>
+  
+  <p>
+    <%= form.label :add_location %><br>
+    <%= form.text_field :locator %>
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<% end %>
