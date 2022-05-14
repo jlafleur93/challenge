@@ -1,24 +1,8 @@
 # README
+Ruby 3.0 required
+as this runs on rails 7.0.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+bin/rails s to get server running
+go to localhost:3000 to get started
+You can create an item, and assign a warehouse location/address to the item, as well as delete them.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
